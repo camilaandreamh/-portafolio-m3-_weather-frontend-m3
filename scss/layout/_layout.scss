@@ -1,0 +1,29 @@
+@use '../base/variables' as v;
+
+body {
+    font-family: v.$font-main;
+    background-color: v.$secondary-color;
+    color: v.$text-dark;
+    margin: 0;
+    padding: 0;
+}
+
+.weather-app {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+
+  &__header {
+    background-color: #212529;  // negro igual que Bootstrap bg-dark
+    padding: v.$spacing-md;
+    color: v.$text-light;
+}
+
+    &__footer {
+    background-color: #212529;  // negro
+    color: v.$text-light;
+    text-align: center;
+    padding: v.$spacing-md;
+    margin-top: auto;
+}
+}

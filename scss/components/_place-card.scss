@@ -1,0 +1,57 @@
+@use '../base/variables' as v;
+
+.place-card {
+    @include v.glass-card;
+    background-color: v.$secondary-color; 
+    transition: transform 0.3s ease;
+    overflow: hidden;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    border: none; 
+
+    &:hover {
+        transform: translateY(-8px);
+        box-shadow: 0 12px 25px rgba(245, 124, 0, 0.2); 
+    }
+
+    &__header {
+        background-color: v.$primary-color; 
+        color: v.$text-dark; 
+        padding: v.$spacing-md;
+        text-align: center;
+    }
+
+    &__title {
+        margin: 0;
+        font-size: 1.25rem;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+    }
+
+    &__body {
+        padding: v.$spacing-md;
+        text-align: center;
+        flex-grow: 1;
+    }
+
+    &__temp {
+        font-size: 3rem;
+        font-weight: 800;
+        color: v.$temp-color; 
+        margin: v.$spacing-sm 0;
+    }
+
+    &__status {
+        color: #8d6e63;
+        text-transform: capitalize;
+        font-weight: 600;
+    }
+
+    &__footer {
+        padding: v.$spacing-md;
+        background-color: rgba(255, 255, 255, 0.4);
+        border-top: 1px solid rgba(0, 0, 0, 0.05);
+    }
+}

@@ -1,0 +1,28 @@
+$primary-color: #ffb74d;    
+$secondary-color: #fff9c4;  
+$text-dark: #5d4037;        
+$text-light: #ffffff;
+
+
+$temp-color: #f57c00;       
+
+
+$text-dark: #212529;
+$text-muted: #6c757d;
+$text-light: #ffffff;
+
+
+$font-main:  'Inter', sans-serif;
+$font-size-base: 16px;
+
+
+$spacing-sm: 8px;
+$spacing-md: 16px;
+$spacing-lg: 24px;
+
+
+@mixin glass-card {
+    border-radius: 12px;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}

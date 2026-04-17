@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detalle | Clima Click</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="./css/main.css">
+</head>
+<body class="weather-app">
+
+    <header class="weather-app__header py-3 shadow-sm">
+        <div class="container">
+            <a href="index.html" class="text-white text-decoration-none h4 fw-bold mb-0">Clima Click</a>
+        </div>
+    </header>
+
+    <main class="container flex-grow-1 my-5">
+        <div class="row">
+            <div class="col-10 col-md-4 mx-auto">
+
+                <article class="place-card border-1 shadow-sm">
+                    <header class="place-card__header p-3 border-bottom">
+                        <h2 id="ciudad-nombre" class="place-card__title h4 mb-0 text-dark">Ciudad</h2>
+                    </header>
+                    <div class="place-card__body p-3 pb-0" style="min-height: 300px;">
+                        <div class="d-flex align-items-center justify-content-between mb-4">
+                            <div>
+                                <div class="display-3 fw-bold text-primary">22°C</div>
+                                <p class="text-muted mb-0">Despejado</p>
+                            </div>
+                            <i class="fas fa-sun fa-5x text-warning"></i>
+                        </div>
+                        <div class="row g-2">
+                            <div class="col-4">
+                                <div class="bg-light p-2 rounded text-center">
+                                    <i class="fas fa-tint text-info mb-1"></i>
+                                    <small class="d-block text-muted">Hum.</small>
+                                    <span class="fw-bold">65%</span>
+                                </div>
+                            </div>
+                            <div class="col-4">
+                                <div class="bg-light p-2 rounded text-center">
+                                    <i class="fas fa-wind text-secondary mb-1"></i>
+                                    <small class="d-block text-muted">Viento</small>
+                                    <span class="fw-bold">12km</span>
+                                </div>
+                            </div>
+                            <div class="col-4">
+                                <div class="bg-light p-2 rounded text-center">
+                                    <i class="fas fa-sun text-warning mb-1"></i>
+                                    <small class="d-block text-muted">UV</small>
+                                    <span class="fw-bold">Bajo</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+
+                <section class="mt-4">
+                    <h5 class="text-dark mb-3 fw-bold">Próximos días</h5>
+                    <div class="row g-2">
+                        <div class="col">
+                            <div class="bg-white border rounded p-2 text-center">
+                                <small class="text-muted">Sáb</small>
+                                <i class="fas fa-sun text-warning d-block my-1"></i>
+                                <span class="fw-bold small">20°</span>
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="bg-white border rounded p-2 text-center">
+                                <small class="text-muted">Dom</small>
+                                <i class="fas fa-sun text-warning d-block my-1"></i>
+                                <span class="fw-bold small">24°</span>
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="bg-white border rounded p-2 text-center">
+                                <small class="text-muted">Lun</small>
+                                <i class="fas fa-cloud text-secondary d-block my-1"></i>
+                                <span class="fw-bold small">18°</span>
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="bg-white border rounded p-2 text-center">
+                                <small class="text-muted">Mar</small>
+                                <i class="fas fa-cloud-rain text-info d-block my-1"></i>
+                                <span class="fw-bold small">16°</span>
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="bg-white border rounded p-2 text-center">
+                                <small class="text-muted">Mié</small>
+                                <i class="fas fa-cloud-sun text-warning d-block my-1"></i>
+                                <span class="fw-bold small">21°</span>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <div class="mt-5 mb-5">
+                    <a href="index.html" class="btn btn-outline-dark btn-sm rounded-pill px-4">
+                        <i class="fas fa-chevron-left me-2"></i>Volver al panel
+                    </a>
+                </div>
+
+            </div>
+        </div>
+    </main>
+
+    <footer class="weather-app__footer">
+        <div class="container">
+            <p class="mb-0">&copy; 2026 Clima Click. Todos los derechos reservados.</p>
+            <small>Coronel, Chile</small>
+        </div>
+    </footer>
+
+    <script>
+        const urlParams = new URLSearchParams(window.location.search);
+        const nombreCiudad = urlParams.get('nombre');
+        if (nombreCiudad) {
+            const decoded = decodeURIComponent(nombreCiudad);
+            document.getElementById('ciudad-nombre').innerText = decoded;
+            document.title = `Clima: ${decoded}`;
+        }
+    </script>
+
+</body>
+</html>
